@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="PT JESTERNOVAZ — Telegraf Academy. Belajar membina Telegram Bot menggunakan Node.js dan Telegraf.">
+  <title>PT JESTERNOVAZ || Telegraf Academy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">J</div>
+        <div class="brand-text">
+          <strong>JESTERNOVAZ</strong>
+          <span>TELEGRAF ACADEMY</span>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="sidebar-label">GETTING STARTED</div>
+
+        <a href="#intro" class="nav-link active">
+          <span class="nav-icon">⌂</span>
+          Introduction
+        </a>
+
+        <a href="#installation" class="nav-link">
+          <span class="nav-icon">⌘</span>
+          Installation
+        </a>
+
+        <a href="#firstbot" class="nav-link">
+          <span class="nav-icon">◈</span>
+          First Bot
+        </a>
+
+        <div class="sidebar-label">CORE CONCEPTS</div>
+
+        <a href="#commands" class="nav-link">
+          <span class="nav-icon">/</span>
+          Commands
+        </a>
+
+        <a href="#context" class="nav-link">
+          <span class="nav-icon">◎</span>
+          Context (ctx)
+        </a>
+
+        <a href="#keyboard" class="nav-link">
+          <span class="nav-icon">▦</span>
+          Keyboard
+        </a>
+
+        <a href="#middleware" class="nav-link">
+          <span class="nav-icon">◇</span>
+          Middleware
+        </a>
+
+        <a href="#error" class="nav-link">
+          <span class="nav-icon">⚠</span>
+          Error Handling
+        </a>
+
+        <div class="sidebar-label">RESOURCES</div>
+
+        <a href="#reference" class="nav-link">
+          <span class="nav-icon">▤</span>
+          Quick Reference
+        </a>
+
+        <a href="#exercises" class="nav-link">
+          <span class="nav-icon">✎</span>
+          Exercises
+        </a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-status">
+          <span class="status-dot"></span>
+          <span>Academy Online</span>
+        </div>
+
+        <div class="sidebar-footer">
+          <span>Developed by</span>
+          <strong>JesterNovaZ</strong>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <header class="top-bar">
+        <div class="top-left">
+          <button id="menuBtn" class="menu-btn" aria-label="Toggle sidebar">☰</button>
+          <div class="breadcrumb">
+            <span>Academy</span>
+            <span class="breadcrumb-separator">/</span>
+            <strong>Documentation</strong>
+          </div>
+        </div>
+
+        <div class="top-right">
+          <span class="version">V1.0.0</span>
+          <a href="https://telegraf.js.org/" target="_blank" rel="noopener noreferrer" class="top-link">
+            Official Docs ↗
+          </a>
+        </div>
+      </header>
+
+      <div class="content">
+
+        <!-- INTRO -->
+        <section class="lesson" id="intro">
+          <div class="hero-card">
+            <div class="hero-text">
+              <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                NODE.JS LEARNING SERIES
+              </div>
+
+              <h1>Build Telegram Bots<br>with <span>Telegraf.js</span></h1>
+
+              <p>
+                Pelajari cara membina Telegram Bot menggunakan Node.js dan
+                Telegraf.js. Dari asas sehingga memahami middleware,
+                context, keyboard dan sistem pengendalian mesej.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#installation" class="primary-btn">Start Learning <span>→</span></a>
+                <a href="https://telegraf.js.org/" target="_blank" rel="noopener noreferrer" class="secondary-btn">Documentation ↗</a>
+              </div>
+
+              <div class="hero-meta">
+                <span>01 — BEGINNER FRIENDLY</span>
+                <span>NODE.JS</span>
+                <span>TELEGRAM API</span>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="telegram-window">
+                <div class="telegram-header">
+                  <div class="telegram-avatar">T</div>
+                  <div>
+                    <strong>Telegraf Bot</strong>
+                    <span>bot · online</span>
+                  </div>
+                  <div class="telegram-menu">···</div>
+                </div>
+
+                <div class="telegram-chat">
+                  <div class="chat-date">TODAY</div>
+                  <div class="message bot-message">
+                    Hello! Welcome to Telegraf Academy.
+                    <span>10:42</span>
+                  </div>
+
+                  <div class="message user-message">
+                    /start
+                    <span>10:43</span>
+                  </div>
+
+                  <div class="message bot-message">
+                    Welcome! Let's build your first bot.
+                    <span>10:43</span>
+                  </div>
+
+                  <div class="chat-input">
+                    <span>Message...</span>
+                    <div>➤</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-code">
+                <span class="code-purple">bot</span><span>.start</span>(<span class="code-green">ctx</span> =&gt; {
+                <br>
+                &nbsp;&nbsp;ctx.reply(<span class="code-yellow">'Hello!'</span>)
+                <br>
+                })
+              </div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">OVERVIEW</div>
+              <h2>What is Telegraf?</h2>
+            </div>
+            <span class="section-number">01 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Telegraf ialah framework Node.js yang membantu developer membina
+            Telegram Bot dengan lebih mudah melalui Telegram Bot API.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-icon purple">01</div>
+              <h3>Simple API</h3>
+              <p>Gunakan method yang mudah difahami untuk menerima dan menghantar mesej.</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon blue">02</div>
+              <h3>Event Handling</h3>
+              <p>Urus command, text, callback query dan pelbagai jenis update.</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon green">03</div>
+              <h3>Middleware</h3>
+              <p>Susun proses bot menggunakan middleware yang fleksibel.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-icon">i</div>
+            <div>
+              <strong>Learning Note</strong>
+              <p>Telegraf bukan bahasa pengaturcaraan. Ia merupakan framework yang dibina menggunakan JavaScript untuk Node.js.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- INSTALLATION -->
+        <section class="lesson" id="installation">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">GETTING STARTED</div>
+              <h2>Installation</h2>
+            </div>
+            <span class="section-number">02 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Sebelum menggunakan Telegraf, pastikan Node.js dan npm telah dipasang
+            pada peranti anda.
+          </p>
+
+          <h3 class="subheading">Step 01 — Create Project</h3>
+          <p class="body-text">Buka terminal dan cipta folder projek baharu.</p>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> TERMINAL</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>mkdir telegraf-bot
+cd telegraf-bot
+npm init -y</code></pre>
+          </div>
+
+          <h3 class="subheading">Step 02 — Install Telegraf</h3>
+          <p class="body-text">Gunakan npm untuk memasang framework Telegraf.</p>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> TERMINAL</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>npm install telegraf</code></pre>
+          </div>
+
+          <h3 class="subheading">Step 03 — Project Structure</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> FILE STRUCTURE</div>
+            </div>
+            <pre><code>telegraf-bot/
+│
+├── node_modules/
+├── package.json
+├── package-lock.json
+└── index.js</code></pre>
+          </div>
+
+          <div class="callout">
+            <div class="callout-icon">!</div>
+            <div>
+              <strong>Important</strong>
+              <p>Jangan kongsi token bot Telegram kepada orang lain. Gunakan environment variable untuk menyimpan token projek sebenar.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FIRST BOT -->
+        <section class="lesson" id="firstbot">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">YOUR FIRST PROJECT</div>
+              <h2>First Bot</h2>
+            </div>
+            <span class="section-number">03 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Sekarang kita akan membina Telegram Bot pertama menggunakan Telegraf.
+          </p>
+
+          <h3 class="subheading">Basic Bot Example</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>const { Telegraf } = require("telegraf");
+
+const bot = new Telegraf(process.env.BOT_TOKEN);
+
+bot.start((ctx) => {
+  ctx.reply("Hello! Welcome to my bot.");
+});
+
+bot.launch();
+
+console.log("Bot is running...");</code></pre>
+          </div>
+
+          <h3 class="subheading">Understanding the Code</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>require("telegraf")</code></td>
+                  <td>Mengimport Telegraf daripada package.</td>
+                </tr>
+                <tr>
+                  <td><code>new Telegraf()</code></td>
+                  <td>Mencipta instance bot baharu.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.start()</code></td>
+                  <td>Mengendalikan command /start.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.reply()</code></td>
+                  <td>Menghantar mesej kepada pengguna.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.launch()</code></td>
+                  <td>Memulakan bot.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- COMMANDS -->
+        <section class="lesson" id="commands">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">BOT INTERACTION</div>
+              <h2>Commands</h2>
+            </div>
+            <span class="section-number">04 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Commands digunakan untuk membolehkan bot bertindak apabila pengguna
+            menghantar arahan tertentu.
+          </p>
+
+          <h3 class="subheading">bot.command()</h3>
+          <p class="body-text">Mengendalikan command Telegram seperti /help dan /about.</p>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.command("help", (ctx) => {
+  ctx.reply("Here is the help menu.");
+});
+
+bot.command("about", (ctx) => {
+  ctx.reply("This bot was built with Telegraf.");
+});</code></pre>
+          </div>
+
+          <h3 class="subheading">bot.hears()</h3>
+          <p class="body-text">Mengesan teks tertentu yang dihantar oleh pengguna.</p>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.hears("hello", (ctx) => {
+  ctx.reply("Hello there!");
+});</code></pre>
+          </div>
+
+          <h3 class="subheading">bot.on()</h3>
+          <p class="body-text">Menerima jenis update tertentu seperti mesej teks.</p>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.on("text", (ctx) => {
+  ctx.reply(`You said: ${ctx.message.text}`);
+});</code></pre>
+          </div>
+        </section>
+
+        <!-- CONTEXT -->
+        <section class="lesson" id="context">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">CORE CONCEPT</div>
+              <h2>Context (ctx)</h2>
+            </div>
+            <span class="section-number">05 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Context atau ctx ialah objek yang diberikan oleh Telegraf kepada
+            handler. Ia mengandungi maklumat berkaitan update yang diterima.
+          </p>
+
+          <div class="diagram">
+            <div class="diagram-node primary-node">
+              <strong>Telegram Update</strong>
+              <span>Incoming message</span>
+            </div>
+            <div class="diagram-arrow">↓</div>
+            <div class="diagram-node">
+              <strong>Telegraf Handler</strong>
+              <span>Processes the update</span>
+            </div>
+            <div class="diagram-arrow">↓</div>
+            <div class="diagram-node accent-node">
+              <strong>ctx Object</strong>
+              <span>Message · User · Chat · Telegram</span>
+            </div>
+          </div>
+
+          <h3 class="subheading">Common Context Properties</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.on("text", async (ctx) => {
+  console.log(ctx.from);
+  console.log(ctx.chat);
+  console.log(ctx.message);
+  console.log(ctx.message.text);
+
+  await ctx.reply("Message received!");
+});</code></pre>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>ctx.from</code></td>
+                  <td>Maklumat pengguna yang menghantar update.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.chat</code></td>
+                  <td>Maklumat chat semasa.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.message</code></td>
+                  <td>Maklumat mesej yang diterima.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.telegram</code></td>
+                  <td>Interface untuk berinteraksi dengan Telegram API.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.reply()</code></td>
+                  <td>Membalas mesej dalam chat semasa.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- KEYBOARD -->
+        <section class="lesson" id="keyboard">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">USER INTERFACE</div>
+              <h2>Keyboard</h2>
+            </div>
+            <span class="section-number">06 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Telegraf menyediakan Markup untuk membina keyboard dan butang interaktif.
+          </p>
+
+          <h3 class="subheading">Inline Keyboard</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>const { Markup } = require("telegraf");
+
+bot.command("menu", (ctx) => {
+  ctx.reply(
+    "Choose an option:",
+    Markup.inlineKeyboard([
+      [
+        Markup.button.callback("Profile", "profile"),
+        Markup.button.callback("Help", "help")
+      ]
+    ])
+  );
+});
+
+bot.action("profile", (ctx) => {
+  ctx.answerCbQuery();
+  ctx.reply("Your profile.");
+});</code></pre>
+          </div>
+
+          <div class="preview-card">
+            <div class="preview-label">INTERFACE PREVIEW</div>
+            <div class="preview-message">
+              <strong>Choose an option:</strong>
+              <div class="preview-buttons">
+                <span>Profile</span>
+                <span>Help</span>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="subheading">Reply Keyboard</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.command("keyboard", (ctx) => {
+  ctx.reply(
+    "Select a button:",
+    Markup.keyboard([
+      ["Profile", "Settings"],
+      ["Help"]
+    ]).resize()
+  );
+});</code></pre>
+          </div>
+        </section>
+
+        <!-- MIDDLEWARE -->
+        <section class="lesson" id="middleware">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">ADVANCED CONCEPT</div>
+              <h2>Middleware</h2>
+            </div>
+            <span class="section-number">07 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Middleware ialah fungsi yang dijalankan dalam pipeline sebelum
+            sesuatu update sampai kepada handler seterusnya.
+          </p>
+
+          <div class="diagram horizontal-diagram">
+            <div class="diagram-node"><strong>Update</strong></div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node accent-node"><strong>Middleware</strong></div>
+            <div class="diagram-arrow">→</div>
+            <div class="diagram-node"><strong>Handler</strong></div>
+          </div>
+
+          <h3 class="subheading">Basic Middleware</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.use(async (ctx, next) => {
+  console.log("Update received");
+
+  await next();
+});
+
+bot.start((ctx) => {
+  ctx.reply("Welcome!");
+});</code></pre>
+          </div>
+
+          <div class="callout">
+            <div class="callout-icon">i</div>
+            <div>
+              <strong>Understand next()</strong>
+              <p><code>await next()</code> membenarkan pipeline diteruskan kepada middleware atau handler seterusnya. Tanpanya, pipeline boleh berhenti pada middleware tersebut.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ERROR HANDLING -->
+        <section class="lesson" id="error">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">RELIABILITY</div>
+              <h2>Error Handling</h2>
+            </div>
+            <span class="section-number">08 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Error handling membantu developer mengesan dan mengurus ralat
+            yang berlaku semasa bot sedang berjalan.
+          </p>
+
+          <h3 class="subheading">Using bot.catch()</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>bot.catch((err, ctx) => {
+  console.error("Bot error:", err);
+  console.error("Update:", ctx.update);
+});</code></pre>
+          </div>
+
+          <h3 class="subheading">Graceful Shutdown</h3>
+
+          <div class="codebox">
+            <div class="code-head">
+              <div class="code-language"><span class="language-dot"></span> JAVASCRIPT</div>
+              <button class="copy-btn">Copy</button>
+            </div>
+            <pre><code>process.once("SIGINT", () => {
+  bot.stop("SIGINT");
+});
+
+process.once("SIGTERM", () => {
+  bot.stop("SIGTERM");
+});</code></pre>
+          </div>
+        </section>
+
+        <!-- QUICK REFERENCE -->
+        <section class="lesson" id="reference">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">DEVELOPER RESOURCE</div>
+              <h2>Quick Reference</h2>
+            </div>
+            <span class="section-number">09 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Senarai method Telegraf yang biasa digunakan. Cari nama method
+            untuk mendapatkan penerangan ringkas.
+          </p>
+
+          <div class="search-box">
+            <span>⌕</span>
+            <input type="text" id="searchReference" placeholder="Search methods, properties...">
+            <kbd>SEARCH</kbd>
+          </div>
+
+          <div class="table-wrap">
+            <table id="referenceTable">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bot.start()</code></td>
+                  <td><span class="tag purple-tag">Command</span></td>
+                  <td>Handles /start command.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.help()</code></td>
+                  <td><span class="tag purple-tag">Command</span></td>
+                  <td>Handles /help command.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.command()</code></td>
+                  <td><span class="tag purple-tag">Command</span></td>
+                  <td>Registers a command handler.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.hears()</code></td>
+                  <td><span class="tag blue-tag">Handler</span></td>
+                  <td>Matches incoming text.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.on()</code></td>
+                  <td><span class="tag blue-tag">Handler</span></td>
+                  <td>Handles a specific update type.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.action()</code></td>
+                  <td><span class="tag blue-tag">Handler</span></td>
+                  <td>Handles callback query actions.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.use()</code></td>
+                  <td><span class="tag green-tag">Middleware</span></td>
+                  <td>Registers middleware.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.catch()</code></td>
+                  <td><span class="tag red-tag">Error</span></td>
+                  <td>Handles middleware errors.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.launch()</code></td>
+                  <td><span class="tag green-tag">System</span></td>
+                  <td>Starts the bot.</td>
+                </tr>
+                <tr>
+                  <td><code>bot.stop()</code></td>
+                  <td><span class="tag green-tag">System</span></td>
+                  <td>Stops the bot.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.reply()</code></td>
+                  <td><span class="tag blue-tag">Context</span></td>
+                  <td>Replies to the current chat.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.from</code></td>
+                  <td><span class="tag blue-tag">Context</span></td>
+                  <td>Provides sender information.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.chat</code></td>
+                  <td><span class="tag blue-tag">Context</span></td>
+                  <td>Provides chat information.</td>
+                </tr>
+                <tr>
+                  <td><code>ctx.telegram</code></td>
+                  <td><span class="tag blue-tag">Context</span></td>
+                  <td>Telegram API interface.</td>
+                </tr>
+                <tr>
+                  <td><code>Markup.inlineKeyboard()</code></td>
+                  <td><span class="tag purple-tag">Markup</span></td>
+                  <td>Creates inline keyboard.</td>
+                </tr>
+                <tr>
+                  <td><code>Markup.button.callback()</code></td>
+                  <td><span class="tag purple-tag">Markup</span></td>
+                  <td>Creates callback button.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- EXERCISES -->
+        <section class="lesson" id="exercises">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">PRACTICE YOUR SKILLS</div>
+              <h2>Exercises</h2>
+            </div>
+            <span class="section-number">10 / 10</span>
+          </div>
+
+          <p class="section-description">
+            Uji pemahaman anda dengan latihan berikut. Cuba tulis kod sendiri
+            sebelum melihat dokumentasi.
+          </p>
+
+          <div class="exercise-card">
+            <div class="exercise-top">
+              <span class="exercise-label">EXERCISE 01</span>
+              <span class="difficulty easy">BEGINNER</span>
+            </div>
+            <h3>Create a Start Command</h3>
+            <p>Bina command /start yang membalas mesej "Welcome to my bot!".</p>
+            <div class="exercise-hint">
+              <span>HINT</span>
+              Gunakan <code>bot.start()</code> dan <code>ctx.reply()</code>.
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-top">
+              <span class="exercise-label">EXERCISE 02</span>
+              <span class="difficulty easy">BEGINNER</span>
+            </div>
+            <h3>Handle User Text</h3>
+            <p>Bina handler yang membaca mesej teks dan membalas semula teks tersebut.</p>
+            <div class="exercise-hint">
+              <span>HINT</span>
+              Gunakan <code>bot.on("text")</code> dan <code>ctx.message.text</code>.
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-top">
+              <span class="exercise-label">EXERCISE 03</span>
+              <span class="difficulty medium">INTERMEDIATE</span>
+            </div>
+            <h3>Create Inline Buttons</h3>
+            <p>Bina dua inline button dengan callback data yang berbeza.</p>
+            <div class="exercise-hint">
+              <span>HINT</span>
+              Gunakan <code>Markup.inlineKeyboard()</code> dan <code>bot.action()</code>.
+            </div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-top">
+              <span class="exercise-label">EXERCISE 04</span>
+              <span class="difficulty medium">INTERMEDIATE</span>
+            </div>
+            <h3>Create Middleware</h3>
+            <p>Bina middleware yang memaparkan ID pengguna sebelum handler berjalan.</p>
+            <div class="exercise-hint">
+              <span>HINT</span>
+              Gunakan <code>bot.use()</code>, <code>ctx.from.id</code> dan <code>next()</code>.
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-brand">
+            <div class="brand-icon small-brand">J</div>
+            <div>
+              <strong>PT JESTERNOVAZ</strong>
+              <span>TELEGRAF ACADEMY</span>
+            </div>
+          </div>
+
+          <p>Built for developers. Designed for learning.</p>
+
+          <div class="footer-bottom">
+            <span>© 2026 JesterNovaZ. All rights reserved.</span>
+            <a href="https://telegraf.js.org/" target="_blank" rel="noopener noreferrer">Telegraf Documentation ↗</a>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
